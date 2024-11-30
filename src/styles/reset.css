@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+}
+
+dialog:modal {
+  overlay: auto !important;
+  margin: auto !important;
+}
+
+dialog::backdrop{
+  width: 100vw; /* Largura total da janela */
+  height: 100vh; /* Altura total da janela */
+
+  border: none; /* Remove bordas */
+  position: fixed; /* Garante que ele ocupe a tela inteira */
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8); /* Fundo opaco/transparente */
+  color: white; /* Cor do texto (opcional) */
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+} 
+
+dialog:-internal-dialog-in-top-layer {
+  position: fixed;
+  inset-block-start: 0px;
+  inset-block-end: 0px;
+  width: 80%;
+  height: 200px;
+  max-width: calc(100% - 2em - 6px);
+  max-height: calc(100% - 2em - 6px);
+  user-select: text;
+  visibility: visible;
+  overflow: auto;
+}
